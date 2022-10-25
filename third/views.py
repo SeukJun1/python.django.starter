@@ -85,7 +85,7 @@ def review_delete(request, restaurant_id, review_id):
 
 
 def review_list(request):
-    reviews = Review.objects.all().select_related().order_by(' -created_at')
+    reviews = Review.objects.all().select_related().order_by('-created_at')
     paginator = Paginator(reviews, 10)
 
     page = request.GET.get('page')
